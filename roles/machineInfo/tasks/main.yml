@@ -1,0 +1,18 @@
+---
+- name: copy os.sh script
+  copy: src=os.sh dest=/tmp/ mode=0755
+
+- name: copy type.sh script
+  copy: src=type.sh dest=/tmp/ mode=0755
+
+- name: Get OS Name
+  command: bash /tmp/os.sh
+  register: os
+
+- name: Get machine type
+  command: bash /tmp/type.sh
+  register: type
+
+- debug: var=os.stdout_lines
+
+- debug: var=type.stdout_lines

@@ -1,0 +1,18 @@
+---
+- name: copy rootLogin.sh script
+  copy: src=rootLogin.sh dest=/tmp/ mode=0755
+
+- name: copy users.sh script
+  copy: src=users.sh dest=/tmp/ mode=0755
+
+- name: Get PermitRootLogin configurations
+  command: bash /tmp/rootLogin.sh
+  register: out1
+
+- name: Get Local Users
+  command: bash /tmp/users.sh
+  register: out2
+
+- debug: var=out1.stdout_lines
+
+- debug: var=out2.stdout.lines

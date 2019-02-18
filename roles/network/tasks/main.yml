@@ -1,0 +1,27 @@
+---
+- name: copy bond.sh script
+  copy: src=bond.sh dest=/tmp/ mode=0755
+
+- name: copy net_speed.sh script
+  copy: src=net_speed.sh dest=/tmp/ mode=0755
+
+- name: copy net_mask.sh script
+  copy: src=net_mask.sh dest=/tmp/ mode=0755
+
+- name: Check bonding
+  command: bash /tmp/bond.sh
+  register: bond
+
+- name: Check net mask speed
+  command: bash /tmp/net_speed.sh
+  register: speed
+
+- name: Check net mask used
+  command: bash /tmp/net_mask.sh
+  register: net
+
+- debug: var=bond.stdout_lines
+
+- debug: var=speed.stdout_lines
+
+- debug: var=net.stdout_lines

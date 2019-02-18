@@ -1,0 +1,63 @@
+---
+- name: copy ntp.sh script
+  copy: src=ntp.sh dest=/tmp/ mode=0755
+
+- name: copy telnet.sh script
+  copy: src=telnet.sh dest=/tmp/ mode=0755
+
+- name: copy firewall.sh script
+  copy: src=firewall.sh dest=/tmp/ mode=0755
+
+- name: copy net_man.sh script
+  copy: src=net_man.sh dest=/tmp/ mode=0755
+
+- name: copy selinux.sh script
+  copy: src=selinux.sh dest=/tmp/ mode=0755
+
+- name: copy fs.sh script
+  copy: src=fs.sh dest=/tmp/ mode=0755
+
+- name: copy disks.sh script
+  copy: src=disks.sh dest=/tmp/ mode=0755
+
+- name: Get NTP Info
+  command: /bin/bash /tmp/ntp.sh
+  register: ntp
+
+- name: Get telnet status
+  command: /bin/bash /tmp/telnet.sh
+  register: telnet
+
+- name: Get Firewall Info and iptables rules
+  command: /bin/bash /tmp/firewall.sh
+  register: fw
+
+- name: Get NetworkManager status
+  command: /bin/bash /tmp/net_man.sh
+  register: nm
+
+- name: Get SELINUX Configurations and status
+  command: /bin/bash /tmp/selinux.sh
+  register: selinux
+
+- name: FS Mounted
+  command: /bin/bash /tmp/fs.sh
+  register: fs
+
+- name: Disks used
+  command: /bin/bash /tmp/disks.sh
+  register: disk
+
+- debug: var=ntp.stdout.lines
+
+- debug: var=telnet.stdout.lines
+
+- debug: var=fw.stdout.lines
+
+- debug: var=nm.stdout.lines
+
+- debug: var=selinux.stdout.lines
+
+- debug: var=fs.stdout.lines
+
+- debug: var=disk.stdout.lines
