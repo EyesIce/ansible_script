@@ -20,22 +20,32 @@ Example:
 Into hosts file are defined two hosts groups as following:
 
 hosts file:
+
 [group1]
+
 host1
+
 host2
+
 host3
 
 [group2]
+
 host4
+
 host5
+
 host6
+
 host7
 
 In this case we must create 2 files into group_vars: 1st file named group1 and 2nd file named group2.
 In group1 file we must write credentials used for connecting to the hosts defined into group1.
 
 group1 file:
+
 ansible_user: root
+
 ansible_password: root_password
 
 We have to do the same for group2 file. Group1 and Group2 using different password and could use different users. If you won't use root, it is possible using a different user with sudo permission and it must definied in script.yml add this variables after hosts variable in script.yml:
@@ -43,5 +53,7 @@ We have to do the same for group2 file. Group1 and Group2 using different passwo
 file script.yml
 
 hosts: hosts groups
+
 become: yes
+
 become_method: sudo
