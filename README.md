@@ -7,4 +7,5 @@ Files contains all the scripts.
 Tasks contains just main.yml. In main.yml are written all tasks will run on remote server.
 
 For running this playbook just run the command:
+
 ansible-playbook /dir/of/this/project/script.yml
