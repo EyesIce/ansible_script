@@ -61,5 +61,7 @@ become_method: sudo
 
 # Running this playbook with:
 mkdir /root/ansible_script/log
+
 ansible-playbook script.yml | tee /root/ansible_script/log/result_nogood
+
 cat log/result_nogood | egrep -v '    ]|stdout'| tr '"' ' ' | tr ',' ' ' | tee log/result_ok
