@@ -48,16 +48,23 @@
   command: /bin/bash /tmp/disks.sh
   register: disk
 
-- debug: var=ntp.stdout_lines
+- name: NTP CONFIGURATIONS
+  debug: var=ntp.stdout_lines
 
-- debug: var=telnet.stdout_lines
+- name: TELNET STATUS
+  debug: var=telnet.stdout_lines
 
-- debug: var=fw.stdout_lines
+- name: FIREWALL STATUS AND RULES
+  debug: var=fw.stdout_lines
 
-- debug: var=nm.stdout_lines
+- name: NETWORK MANAGER STATUS
+  debug: var=nm.stdout_lines
 
-- debug: var=selinux.stdout_lines
+- name: SELINUX STATUS
+  debug: var=selinux.stdout_lines
 
-- debug: var=fs.stdout_lines
+- name: FILESYSTEM MOUNTED
+  debug: var=fs.stdout_lines
 
-- debug: var=disk.stdout_lines
+- name: DISKS USED
+  debug: var=disk.stdout_lines

@@ -13,6 +13,8 @@
   command: bash /tmp/type.sh
   register: type
 
-- debug: var=os.stdout_lines
+- name: OS VERSION
+  debug: var=os.stdout_lines
 
-- debug: var=type.stdout_lines
+- name: SERVER TYPE PHYSICAL OR VIRTUAL
+  debug: var=type.stdout_lines

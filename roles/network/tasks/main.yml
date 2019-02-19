@@ -20,8 +20,11 @@
   command: bash /tmp/net_mask.sh
   register: net
 
-- debug: var=bond.stdout_lines
+- name: BOND NET MASK
+  debug: var=bond.stdout_lines
 
-- debug: var=speed.stdout_lines
+- name: NET MASK SPEED
+  debug: var=speed.stdout_lines
 
-- debug: var=net.stdout_lines
+- name: NET MASKS
+  debug: var=net.stdout_lines
