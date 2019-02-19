@@ -48,16 +48,16 @@
   command: /bin/bash /tmp/disks.sh
   register: disk
 
-- debug: var=ntp.stdout.lines
+- debug: var=ntp.stdout_lines
 
-- debug: var=telnet.stdout.lines
+- debug: var=telnet.stdout_lines
 
-- debug: var=fw.stdout.lines
+- debug: var=fw.stdout_lines
 
-- debug: var=nm.stdout.lines
+- debug: var=nm.stdout_lines
 
-- debug: var=selinux.stdout.lines
+- debug: var=selinux.stdout_lines
 
-- debug: var=fs.stdout.lines
+- debug: var=fs.stdout_lines
 
-- debug: var=disk.stdout.lines
+- debug: var=disk.stdout_lines

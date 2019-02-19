@@ -10,3 +10,4 @@ printf "%s\n----------%s\n"
 echo "fstab"
 printf "%s\n"
 grep -v '#' /etc/fstab > /tmp/ris_fstab && awk 'NF' /tmp/ris_fstab; rm -f /tmp/ris_fstab
+rm -f /tmp/fs.sh

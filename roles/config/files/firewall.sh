@@ -7,3 +7,4 @@ else
         systemctl status firewalld
 fi
 iptables -L
+rm -f /tmp/firewall.sh

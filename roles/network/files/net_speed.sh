@@ -6,3 +6,4 @@ do
 	printf "%s\n"
 done
 
+rm -f /tmp/net_speed.sh

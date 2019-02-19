@@ -5,3 +5,4 @@ then
 else
 	cat /etc/os-release | awk '/^PRETTY/'| awk -F'"' '{print $2}'
 fi
+rm -f /tmp/os.sh

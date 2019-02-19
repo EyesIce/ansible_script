@@ -7,3 +7,4 @@ else
 	echo ntpq non installato
 fi
 ls -l /etc/localtime
+rm -f /tmp/ntp.sh

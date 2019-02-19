@@ -15,4 +15,4 @@
 
 - debug: var=out1.stdout_lines
 
-- debug: var=out2.stdout.lines
+- debug: var=out2.stdout_lines
