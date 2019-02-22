@@ -8,5 +8,6 @@ else
 		cat /etc/os-release | awk '/^PRETTY/'| awk -F'"' '{print $2}'
 	else
 		zypper ls |grep -i sle | tail -1 | awk -F'|' '{print $2}'	
+	fi
 fi
 rm -f /tmp/os.sh
